@@ -17,21 +17,23 @@
 <div class="min-h-screen bg-black select-none">
 	<!-- <Navbar /> -->
 	{#if animate}
-	<div class="flex flex-col px-8">
+	<div class="flex h-screen flex-col px-8">
 		<!-- <h1 class="text-[12rem] font-bold flex justify-center pt-36 tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-800">
 			Exergie<span class="text-slate-200 font-bold text-5xl pt-12">'23</span>
 		</h1> -->
+		<div class="m-auto">
 			<img
 				transition:scale="{{ duration: 5000 }}"
-				class="md:h-[12rem] object-contain md:mt-[14rem] mt-[15rem]"
+				class="md:h-[12rem] object-contain"
 				src="/exergie_logo.png"
 				alt=""
 			/>
-			<p transition:blur="{{ duration: 3000 }}" class="text-slate-200 md:text-5xl text-lg mx-auto mt-4 font-bold">Cultural & Technical Event</p>
-			<p transition:blur="{{ duration: 2500 }}" class="text-slate-200 md:text-2xl mx-auto md:mt-8 mt-2 text-xs">May 04-05, 2023</p>
-			<p transition:blur="{{ duration: 2500 }}" class="text-slate-200 md:text-2xl mx-auto md:mt-2 mt-1 text-xs">Arya College of Engineering & IT</p>
+			<p transition:blur="{{ duration: 3000 }}" class="text-slate-200 md:text-5xl text-lg text-center mt-4 font-bold">Cultural & Technical Event</p>
+			<p transition:blur="{{ duration: 2500 }}" class="text-slate-200 md:text-2xl text-center md:mt-8 mt-2 text-xs">May 04-05, 2023</p>
+			<p transition:blur="{{ duration: 2500 }}" class="text-slate-200 md:text-2xl text-center md:mt-2 mt-1 text-xs">Arya College of Engineering & IT</p>
+		</div>
 	</div>
-	<div class="flex md:justify-between flex-col md:flex-row md:px-28 px-8 md:mt-[16rem] mt-[8rem]">
+	<div class="flex md:justify-between flex-col md:flex-row md:px-28 px-8">
 		<div class="flex flex-col max-w-xl">
 			<p class="text-[4.5rem] font-bold text-[#DB202C] flex justify-center md:flex-none md:justify-normal font-bebas-neue tracking-wide">About US</p>
 			<p class="text-slate-200 md:text-2xl text-sm md:mt-8 mt-4">
