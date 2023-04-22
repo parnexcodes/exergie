@@ -5,8 +5,7 @@
 	import Footer from '../components/Footer.svelte';
 	import { CardsData } from '../data/Cards';
 	import { SponsorsData } from '../data/Sponsors';
-	import { scale, fade, blur, slide, draw, crossfade, fly } from 'svelte/transition';
-	import { expoOut } from 'svelte/easing'
+	import { scale, blur } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	let animate = false;
 	onMount(() => {
@@ -25,7 +24,7 @@
 			<img
 				transition:scale="{{ duration: 5000 }}"
 				class="md:h-[12rem] object-contain"
-				src="/exergie_logo.png"
+				src="/exergie_logo-min.png"
 				alt=""
 			/>
 			<p transition:blur="{{ duration: 3000 }}" class="text-slate-200 md:text-5xl text-lg text-center mt-4 font-bold">Cultural & Technical Event</p>
