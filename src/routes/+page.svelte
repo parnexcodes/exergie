@@ -31,15 +31,15 @@
 			<p transition:blur="{{ duration: 2500 }}" class="text-slate-200 md:text-2xl mx-auto md:mt-8 mt-2 text-xs">May 04-05, 2023</p>
 			<p transition:blur="{{ duration: 2500 }}" class="text-slate-200 md:text-2xl mx-auto md:mt-2 mt-1 text-xs">Arya College of Engineering & IT</p>
 	</div>
-	<div class="flex md:justify-between flex-col md:flex-row md:px-28 px-8 md:mt-[16rem] mt-[17rem]">
+	<div class="flex md:justify-between flex-col md:flex-row md:px-28 px-8 md:mt-[16rem] mt-[8rem]">
 		<div class="flex flex-col max-w-xl">
-			<p class="text-[4.5rem] font-bold text-[#DB202C] font-bebas-neue tracking-wide">About US</p>
-			<p class="text-slate-200 md:text-2xl text-sm mt-8">
+			<p class="text-[4.5rem] font-bold text-[#DB202C] flex justify-center md:flex-none md:justify-normal font-bebas-neue tracking-wide">About US</p>
+			<p class="text-slate-200 md:text-2xl text-sm md:mt-8 mt-4">
 				EXERGIE'23 is the most anticipated national level technical carnival organized by the
 				Computer Science and I.T. Department. This innovative event challenges and enhances the
 				skills of students in various categories of competition.
 			</p>
-			<p class="text-slate-200 md:text-2xl text-sm mt-4">
+			<p class="text-slate-200 md:text-2xl text-sm md:mt-4 mt-2">
 				With over 4000 footfalls, EXERGIE'23 is the perfect platform for brands to connect with
 				tech-savvy young minds. Our event offers a unique opportunity for sponsors to showcase their
 				brand, products, and services to an engaged audience of students, professors, and
