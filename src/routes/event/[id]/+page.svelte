@@ -87,7 +87,8 @@
 							class="mt-8 flex flex-col items-center gap-6"
 						> -->
 						<form
-							transition:scale={{ duration: 2000 }}
+							in:scale={{ duration: 2000 }}
+							out:fade={{ duration: 500 }}
 							class="mt-8 flex flex-col items-center gap-6"
 							id="form"
 							on:submit|preventDefault={() => createParticipant()}
