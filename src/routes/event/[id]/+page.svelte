@@ -22,24 +22,32 @@
 	});
 
 	const createParticipant = async () => {
-		const request = await axios.post(
-			'/api/add-detail',
-			{
-				event_id: id,
-				name,
-				email,
-				college_name,
-				college_year,
-				phone,
-				payment_id
-			},
-			{
-				headers: {
-					'Content-Type': 'application/json'
+		try {
+			const request = await axios.post(
+				'/api/add-detail',
+				{
+					event_id: id,
+					name,
+					email,
+					college_name,
+					college_year,
+					phone,
+					payment_id
+				},
+				{
+					headers: {
+						'Content-Type': 'application/json'
+					}
 				}
+			);
+			alert('Added Successfully!');
+			const response = request.data;
+		} catch (error) {
+			const status_code = error.response.status;
+			if (status_code == 400) {
+				alert('Something went wrong, try again!');
 			}
-		);
-		alert('Added Successfully!');
+		}
 	};
 </script>
 
@@ -74,49 +82,54 @@
 							transition:scale={{ duration: 2000 }}
 							class="mt-8 flex flex-col items-center gap-6"
 						> -->
-							<form transition:scale={{ duration: 2000 }} class="mt-8 flex flex-col items-center gap-6" id="form" on:submit|preventDefault={() => createParticipant()}>
-								<input
-									bind:value={name}
-									type="text"
-									required
-									placeholder="Enter Name"
-									class="!outline-none input w-full max-w-md border border-red-600 bg-black text-slate-200"
-								/>
-								<input
-									bind:value={email}
-									type="email"
-									required
-									placeholder="Enter Email"
-									class="!outline-none input w-full max-w-md border border-red-600 bg-black text-slate-200"
-								/>
-								<input
-									bind:value={college_name}
-									type="text"
-									required
-									placeholder="Enter College Name"
-									class="!outline-none input w-full max-w-md border border-red-600 bg-black text-slate-200"
-								/>
-								<input
-									bind:value={college_year}
-									type="number"
-									required
-									placeholder="Enter College Year"
-									class="!outline-none input w-full max-w-md border border-red-600 bg-black text-slate-200"
-								/>
-								<input
-									bind:value={phone}
-									type="number"
-									required
-									placeholder="Enter Phone Number"
-									class="!outline-none input w-full max-w-md border border-red-600 bg-black text-slate-200"
-								/>
-								<input
-									bind:value={payment_id}
-									type="text"
-									required
-									placeholder="Enter Payment ID"
-									class="!outline-none input w-full max-w-md border border-red-600 bg-black text-slate-200"
-								/>
+						<form
+							transition:scale={{ duration: 2000 }}
+							class="mt-8 flex flex-col items-center gap-6"
+							id="form"
+							on:submit|preventDefault={() => createParticipant()}
+						>
+							<input
+								bind:value={name}
+								type="text"
+								required
+								placeholder="Enter Name"
+								class="!outline-none input w-full max-w-md border border-red-600 bg-black text-slate-200"
+							/>
+							<input
+								bind:value={email}
+								type="email"
+								required
+								placeholder="Enter Email"
+								class="!outline-none input w-full max-w-md border border-red-600 bg-black text-slate-200"
+							/>
+							<input
+								bind:value={college_name}
+								type="text"
+								required
+								placeholder="Enter College Name"
+								class="!outline-none input w-full max-w-md border border-red-600 bg-black text-slate-200"
+							/>
+							<input
+								bind:value={college_year}
+								type="number"
+								required
+								placeholder="Enter College Year"
+								class="!outline-none input w-full max-w-md border border-red-600 bg-black text-slate-200"
+							/>
+							<input
+								bind:value={phone}
+								type="number"
+								required
+								placeholder="Enter Phone Number"
+								class="!outline-none input w-full max-w-md border border-red-600 bg-black text-slate-200"
+							/>
+							<input
+								bind:value={payment_id}
+								type="text"
+								required
+								placeholder="Enter Payment ID"
+								class="!outline-none input w-full max-w-md border border-red-600 bg-black text-slate-200"
+							/>
 							<div class="flex gap-4">
 								<!-- The button to open modal -->
 								<label
@@ -138,7 +151,7 @@
 								>
 							</div>
 						</form>
-						</div>
+					</div>
 					<!-- </div> -->
 				{/if}
 			</div>

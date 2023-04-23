@@ -5,7 +5,7 @@
 	import Footer from '../components/Footer.svelte';
 	import { CardsData } from '../data/Cards';
 	import { SponsorsData } from '../data/Sponsors';
-	import { scale, blur } from 'svelte/transition';
+	import { scale, blur, fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	let animate = false;
 	onMount(() => {
@@ -22,14 +22,15 @@
 		</h1> -->
 		<div class="m-auto">
 			<img
-				transition:scale="{{ duration: 5000 }}"
+				in:scale="{{ duration: 5000 }}"
+				out:fade
 				class="md:h-[12rem] object-contain"
 				src="/exergie_logo-min.png"
 				alt=""
 			/>
-			<p transition:blur="{{ duration: 3000 }}" class="text-slate-200 md:text-5xl text-lg text-center mt-4 font-bold">Cultural & Technical Event</p>
-			<p transition:blur="{{ duration: 2500 }}" class="text-slate-200 md:text-2xl text-center md:mt-8 mt-2 text-xs">May 04-05, 2023</p>
-			<p transition:blur="{{ duration: 2500 }}" class="text-slate-200 md:text-2xl text-center md:mt-2 mt-1 text-xs">Arya College of Engineering & IT</p>
+			<p in:blur="{{ duration: 3000 }}" out:fade class="text-slate-200 md:text-5xl text-lg text-center mt-4 font-bold">Cultural & Technical Event</p>
+			<p in:blur="{{ duration: 2500 }}" out:fade class="text-slate-200 md:text-2xl text-center md:mt-8 mt-2 text-xs">May 04-05, 2023</p>
+			<p in:blur="{{ duration: 2500 }}" out:fade class="text-slate-200 md:text-2xl text-center md:mt-2 mt-1 text-xs">Arya College of Engineering & IT</p>
 		</div>
 	</div>
 	<div class="flex md:justify-between flex-col md:flex-row md:px-28 px-8">
@@ -57,7 +58,9 @@
 		</h1>
 		<div class="flex justify-center gap-10 md:mt-16 mt-8 flex-wrap">
 			{#each CardsData as card}
+			<a href={`/event/${card.id}`}>
 				<Cards id={card.id} name={card.name} info={card.info} image={card.image} />
+			</a>
 			{/each}
 		</div>
 	</div>
