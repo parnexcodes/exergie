@@ -54,26 +54,30 @@
 {#if data.length > 0}
 	<div class="min-h-screen bg-black select-none">
 		<div class="flex justify-center items-center pt-12">
-			<img class="h-[64px]" src="/exergie_logo.svg" alt="" />
+			<a href="/">
+				<img class="h-[64px]" src="/exergie_logo.svg" alt="" />
+			</a>
 		</div>
 		<div class="px-28 py-16 flex justify-center items-center">
 			<div class="flex flex-col">
 				{#if animate}
 					<img
-						transition:blur={{ duration: 2500 }}
+						in:blur={{ duration: 2500 }}
+						out:fade={{ duration: 500 }}
 						class="h-[300px] object-contain"
 						src={data[0].image}
 						alt=""
 					/>
 					<div class="text-center mt-8">
 						<p
-							transition:scale={{ duration: 2000 }}
+							in:scale={{ duration: 2000 }}
+							out:fade={{ duration: 500 }}
 							class="font-bebas-neue text-4xl font-bold text-red-600 tracking-wider"
 						>
 							{data[0].name}
 						</p>
 						<p
-							transition:fade={{ duration: 2700, easing: sineIn }}
+							in:fade={{ duration: 2700, easing: sineIn }}
 							class="text-slate-200 font-mono font-bold text-lg mt-4"
 						>
 							{data[0].info}
