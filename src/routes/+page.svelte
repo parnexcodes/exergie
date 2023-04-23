@@ -57,7 +57,7 @@
 		</h1>
 		<div class="flex justify-center gap-10 md:mt-16 mt-8 flex-wrap">
 			{#each CardsData as card}
-				<Cards name={card.name} info={card.info} image={card.image} />
+				<Cards id={card.id} name={card.name} info={card.info} image={card.image} />
 			{/each}
 		</div>
 	</div>
