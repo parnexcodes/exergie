@@ -64,7 +64,7 @@
 					<img
 						in:blur={{ duration: 2500 }}
 						out:fade={{ duration: 500 }}
-						class="h-[300px] object-contain"
+						class="md:h-[300px] h-[100px] object-contain"
 						src={data[0].image}
 						alt=""
 					/>
@@ -72,13 +72,13 @@
 						<p
 							in:scale={{ duration: 2000 }}
 							out:fade={{ duration: 500 }}
-							class="font-bebas-neue text-4xl font-bold text-red-600 tracking-wider"
+							class="font-bebas-neue text-[2.5rem] font-bold text-red-600 tracking-wider"
 						>
 							{data[0].name}
 						</p>
 						<p
 							in:fade={{ duration: 2700, easing: sineIn }}
-							class="text-slate-200 font-mono font-bold text-lg mt-4"
+							class="text-slate-200 font-mono font-bold text-xl mt-4"
 						>
 							{data[0].info}
 						</p>
