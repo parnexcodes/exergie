@@ -78,7 +78,7 @@
 						</p>
 						<p
 							in:fade={{ duration: 2700, easing: sineIn }}
-							class="text-slate-200 font-mono font-bold text-xl mt-4"
+							class="text-slate-200 font-mono font-bold md:text-xl text-sm mt-4"
 						>
 							{data[0].info}
 						</p>
